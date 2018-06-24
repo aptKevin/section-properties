@@ -130,7 +130,7 @@ def RHS(d, b, t, r_out, n_r):
         points.append((x_out, y_out))
         points.append((x_in, y_in))
 
-    for i in range(len(points) / 2):
+    for i in range(int(len(points) / 2)):
         if i != len(points) / 2 - 1:
             facets.append((i * 2, i * 2 + 2))
             facets.append((i * 2 + 1, i * 2 + 3))

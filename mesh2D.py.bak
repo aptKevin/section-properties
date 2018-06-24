@@ -755,96 +755,96 @@ class triMesh:
         This function prints the results of the geometric cross-sectional
         analaysis to the console.
         '''
-        print("-------------------------")
-        print("Global xy Axis Properties")
-        print("-------------------------")
-        print("Area = {}".format(self.area))
-        print("Qx = {}".format(self.Qx))
-        print("Qy = {}".format(self.Qy))
-        print("cx = {}".format(self.cx))
-        print("cy = {}".format(self.cy))
-        print("Ixx_g = {}".format(self.ixx_g))
-        print("Iyy_g = {}".format(self.iyy_g))
-        print("Ixy_g = {}".format(self.ixy_g))
-        print("")
-        print("-----------------------------")
-        print("Centroidal xy Axis Properties")
-        print("-----------------------------")
-        print("Ixx_c = {}".format(self.ixx_c))
-        print("Iyy_c = {}".format(self.iyy_c))
-        print("Ixy_c = {}".format(self.ixy_c))
-        print("Zxx+ = {}".format(self.zxx_plus))
-        print("Zxx- = {}".format(self.zxx_minus))
-        print("Zyy+ = {}".format(self.zyy_plus))
-        print("Zyy- = {}".format(self.zyy_minus))
-        print("rx_c = {}".format(self.rx_c))
-        print("ry_c = {}".format(self.ry_c))
-        print("")
-        print("-----------------------------")
-        print("Principal Axis Properties")
-        print("-----------------------------")
-        print("phi = {}".format(self.phi))
-        print("I11_c = {}".format(self.i11_c))
-        print("I22_c = {}".format(self.i22_c))
-        print("Z11+ = {}".format(self.z11_plus))
-        print("Z11- = {}".format(self.z11_minus))
-        print("Z22+ = {}".format(self.z22_plus))
-        print("Z22- = {}".format(self.z22_minus))
-        print("r1_c = {}".format(self.r1_c))
-        print("r2_c = {}".format(self.r2_c))
-        print("")
+        print "-------------------------"
+        print "Global xy Axis Properties"
+        print "-------------------------"
+        print "Area = {}".format(self.area)
+        print "Qx = {}".format(self.Qx)
+        print "Qy = {}".format(self.Qy)
+        print "cx = {}".format(self.cx)
+        print "cy = {}".format(self.cy)
+        print "Ixx_g = {}".format(self.ixx_g)
+        print "Iyy_g = {}".format(self.iyy_g)
+        print "Ixy_g = {}".format(self.ixy_g)
+        print ""
+        print "-----------------------------"
+        print "Centroidal xy Axis Properties"
+        print "-----------------------------"
+        print "Ixx_c = {}".format(self.ixx_c)
+        print "Iyy_c = {}".format(self.iyy_c)
+        print "Ixy_c = {}".format(self.ixy_c)
+        print "Zxx+ = {}".format(self.zxx_plus)
+        print "Zxx- = {}".format(self.zxx_minus)
+        print "Zyy+ = {}".format(self.zyy_plus)
+        print "Zyy- = {}".format(self.zyy_minus)
+        print "rx_c = {}".format(self.rx_c)
+        print "ry_c = {}".format(self.ry_c)
+        print ""
+        print "-----------------------------"
+        print "Principal Axis Properties"
+        print "-----------------------------"
+        print "phi = {}".format(self.phi)
+        print "I11_c = {}".format(self.i11_c)
+        print "I22_c = {}".format(self.i22_c)
+        print "Z11+ = {}".format(self.z11_plus)
+        print "Z11- = {}".format(self.z11_minus)
+        print "Z22+ = {}".format(self.z22_plus)
+        print "Z22- = {}".format(self.z22_minus)
+        print "r1_c = {}".format(self.r1_c)
+        print "r2_c = {}".format(self.r2_c)
+        print ""
 
     def printPlasticResults(self):
         '''
         This function prints the results of the plastic section analaysis to
         the console.
         '''
-        print("-----------------------------")
-        print("Plastic Properties")
-        print("-----------------------------")
-        print("x_pc = {}".format(self.x_pc))
-        print("y_pc = {}".format(self.y_pc))
-        print("Sxx = {}".format(self.Sxx))
-        print("Syy = {}".format(self.Syy))
-        print("SF_xx+ = {}".format(self.shapeFactor_xx_plus))
-        print("SF_xx- = {}".format(self.shapeFactor_xx_minus))
-        print("SF_yy+ = {}".format(self.shapeFactor_yy_plus))
-        print("SF_yy- = {}".format(self.shapeFactor_yy_minus))
-        print("x_1_pc = {}".format(self.x_1_pc))
-        print("y_2_pc = {}".format(self.y_2_pc))
-        print("S11 = {}".format(self.S11))
-        print("S22 = {}".format(self.S22))
-        print("SF_11+ = {}".format(self.shapeFactor_11_plus))
-        print("SF_11- = {}".format(self.shapeFactor_11_minus))
-        print("SF_22+ = {}".format(self.shapeFactor_22_plus))
-        print("SF_22- = {}".format(self.shapeFactor_22_minus))
-        print("")
+        print "-----------------------------"
+        print "Plastic Properties"
+        print "-----------------------------"
+        print "x_pc = {}".format(self.x_pc)
+        print "y_pc = {}".format(self.y_pc)
+        print "Sxx = {}".format(self.Sxx)
+        print "Syy = {}".format(self.Syy)
+        print "SF_xx+ = {}".format(self.shapeFactor_xx_plus)
+        print "SF_xx- = {}".format(self.shapeFactor_xx_minus)
+        print "SF_yy+ = {}".format(self.shapeFactor_yy_plus)
+        print "SF_yy- = {}".format(self.shapeFactor_yy_minus)
+        print "x_1_pc = {}".format(self.x_1_pc)
+        print "y_2_pc = {}".format(self.y_2_pc)
+        print "S11 = {}".format(self.S11)
+        print "S22 = {}".format(self.S22)
+        print "SF_11+ = {}".format(self.shapeFactor_11_plus)
+        print "SF_11- = {}".format(self.shapeFactor_11_minus)
+        print "SF_22+ = {}".format(self.shapeFactor_22_plus)
+        print "SF_22- = {}".format(self.shapeFactor_22_minus)
+        print ""
 
     def printWarpingResults(self):
         '''
         This function prints the results of the warping dependent
         cross-sectional analaysis to the console.
         '''
-        print("-----------------------------")
-        print("Torsional Properties")
-        print("-----------------------------")
-        print("J = {}".format(self.J))
-        print("Iw = {}".format(self.Gamma))
-        print("")
-        print("-----------------------------")
-        print("Shear Properties")
-        print("-----------------------------")
-        print("x_s,e = {}".format(self.x_se))
-        print("y_s,e = {}".format(self.y_se))
-        print("x_s,t = {}".format(self.x_st))
-        print("y_s,t = {}".format(self.y_st))
-        print("x_1_s,e = {}".format(self.x_1_se))
-        print("y_2_s,e = {}".format(self.y_2_se))
-        print("A_s,x = {}".format(self.A_sx))
-        print("A_s,y = {}".format(self.A_sy))
-        print("A_s,11 = {}".format(self.A_s11))
-        print("A_s,22 = {}".format(self.A_s22))
-        print("")
+        print "-----------------------------"
+        print "Torsional Properties"
+        print "-----------------------------"
+        print "J = {}".format(self.J)
+        print "Iw = {}".format(self.Gamma)
+        print ""
+        print "-----------------------------"
+        print "Shear Properties"
+        print "-----------------------------"
+        print "x_s,e = {}".format(self.x_se)
+        print "y_s,e = {}".format(self.y_se)
+        print "x_s,t = {}".format(self.x_st)
+        print "y_s,t = {}".format(self.y_st)
+        print "x_1_s,e = {}".format(self.x_1_se)
+        print "y_2_s,e = {}".format(self.y_2_se)
+        print "A_s,x = {}".format(self.A_sx)
+        print "A_s,y = {}".format(self.A_sy)
+        print "A_s,11 = {}".format(self.A_s11)
+        print "A_s,22 = {}".format(self.A_s22)
+        print ""
 
 # ------------------------------------------------------------------------------
 # GENERAL METHODS:
@@ -937,7 +937,7 @@ def pcAlgorithm(tol, maxIt, u, cx, cy, dmin, dmax, points, facets, holes,
     if (abs(areaConvergence_n) > tol):
         text1 = 'WARNING: Plastic centroid algorithm did not converge for the '
         text2 = 'axis in the direction x:{0:.3f}; y:{1:.3f}'.format(u[0], u[1])
-        print(text1 + text2 + '\n')
+        print text1 + text2 + '\n'
 
     return (a_n, topArea, botArea, topCentroid, botCentroid)
 
@@ -1182,10 +1182,10 @@ def functionTimer(text, function, *args):
     '''
     start_time = time.time()
     if text != '':
-        print(text)
+        print text
     result = function(*args)
     if text != '':
-        print(("--- %s completed in %s seconds ---" % (
-            function.__name__, time.time() - start_time)))
-        print('')
+        print("--- %s completed in %s seconds ---" % (
+            function.__name__, time.time() - start_time))
+        print ''
     return result

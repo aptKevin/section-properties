@@ -71,7 +71,7 @@ def CHS(d, t, n):
     return (points, facets, holes)
 
 
-def RHS(d, b, t, r_out, n_r):
+def RHS(d, b, t, r_out, n_r, angle=0):
     '''
     Constructs a rectangular hollow section with depth d, width b, thickness t,
     outer radius r_out, using n_r points to construct the inner and outer
@@ -138,10 +138,15 @@ def RHS(d, b, t, r_out, n_r):
             facets.append((i * 2, 0))
             facets.append((i * 2 + 1, 1))
 
+    # rotate the section angle degree in counter clock direction
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+        holes = RotateXYcoord(holes,angle)
+
     return (points, facets, holes)
 
 
-def RHS_Split(d, b, b_split, t, r_out, n_r):
+def RHS_Split(d, b, b_split, t, r_out, n_r, angle=0):
     '''
     Constructs a rectangular hollow section with depth d, width b, split
     thickness b_split, thickness t, outer radius r_out, using n_r points to
@@ -238,10 +243,13 @@ def RHS_Split(d, b, b_split, t, r_out, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+
     return (points, facets, holes)
 
 
-def ISection(d, b, tf, tw, r, n_r):
+def ISection(d, b, tf, tw, r, n_r, angle=0):
     '''
     Constructs an I-section with depth d, width b, flange thickness tf, web
     thickness tw, root radius r, using n_r points to construct the root radius.
@@ -303,10 +311,13 @@ def ISection(d, b, tf, tw, r, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+
     return (points, facets, holes)
 
 
-def PFC(d, b, tf, tw, r, n_r):
+def PFC(d, b, tf, tw, r, n_r, angle=0):
     '''
     Constructs a PFC section with depth d, width b, flange thickness tf, web
     thickness tw, root radius r, using n_r points to construct the root radius.
@@ -347,10 +358,14 @@ def PFC(d, b, tf, tw, r, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    # rotate the section angle degree in counter clock direction
+    if angle != 0:
+        points = RotateXYcoord(points,angle)
+
     return (points, facets, holes)
 
 
-def Angle(d, b, t, r_root, r_toe, n_r):
+def Angle(d, b, t, r_root, r_toe, n_r, angle=0):
     '''
     Constructs an angle section with depth d, width b, thickness t, root radius
     r_root, toe radius r_toe using n_r points to construct the root radius.
@@ -397,6 +412,10 @@ def Angle(d, b, t, r_root, r_toe, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    # rotate the section angle degree in counter clock direction
+    if angle != 0:
+        points = RotateXYcoord(points,angle)
+
     return (points, facets, holes)
 
 
@@ -436,7 +455,7 @@ def Round(d, n):
     return (points, facets, holes)
 
 
-def Tee(d, b, tf, tw, r, n_r):
+def Tee(d, b, tf, tw, r, n_r, angle=0):
     '''
     Constructs a Tee section with depth d, width b, flange thickness tf, web
     thickness tw, root radius r, using n_r points to construct the root radius.
@@ -477,10 +496,13 @@ def Tee(d, b, tf, tw, r, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+
     return (points, facets, holes)
 
 
-def Cee(d, b, l, t, r_out, n_r):
+def Cee(d, b, l, t, r_out, n_r, angle=0):
     '''
     Constructs a Cee section with depth d, width b, lip l, thickness t, outer
     radius r_out, using n_r points to construct the root radius.
@@ -574,10 +596,13 @@ def Cee(d, b, l, t, r_out, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+
     return (points, facets, holes)
 
 
-def Zed(d, b1, b2, l, t, r_out, n_r):
+def Zed(d, b1, b2, l, t, r_out, n_r, angle=0):
     '''
     Constructs a Zed section with depth d, left flange width b1, right flange
     width b2, lip l, thickness t, outer radius r_out, using n_r points to
@@ -672,10 +697,13 @@ def Zed(d, b1, b2, l, t, r_out, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+
     return (points, facets, holes)
 
 
-def Cruciform(d, b, t, r, n_r):
+def Cruciform(d, b, t, r, n_r, angle=0):
     '''
     Constructs a cruciform section with depth d, width b, thickness t, root
     radius r, using n_r points to construct the root radius.
@@ -738,4 +766,31 @@ def Cruciform(d, b, t, r, n_r):
         else:
             facets.append((len(points) - 1, 0))
 
+    if angle != 0:
+        points = RotateXYcoord(points, angle)
+
     return (points, facets, holes)
+
+def RotateXYcoord(xyCoordList, angle):
+    '''
+    Rotate the x,y coord list by angle(degree) in counter clock direction
+    :param xyCoordList: [(x,y),(x2,y2),...]
+    :param angle : float unit degree
+    :return newxyList
+    '''
+    newxyList = []
+    for (x, y) in xyCoordList:
+        alpha = np.radians(angle)
+        x0 = x * np.cos(alpha) - y * np.sin(alpha)
+        y0 = x * np.sin(alpha) + y * np.cos(alpha)
+        newxyList.append((x0, y0))
+
+    return newxyList
+
+
+
+
+
+
+
+

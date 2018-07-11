@@ -19,7 +19,8 @@ import sectionGenerator
 
 # Generate 200 mm x 100 mm x 9 mm RHS section, with a 15 mm external radius
 # modelled by eight nodes.
-(points1, facets1, holes1) = sectionGenerator.RHS(200, 100, 9, 15, 8)
+#(points1, facets1, holes1) = sectionGenerator.RHS(200, 100, 9, 15, 8, angle=45)
+(points1, facets1, holes1) = sectionGenerator.PFC(100,100,8,10,5,9,angle=10)
 
 # Perform a cross-section analysis with a max. mesh area of 5 mm^2 and poissons
 # ratio (nu) of 0.
@@ -45,6 +46,7 @@ facets2 = ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8),
             (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 0)])
 holes2 = []
 
+points2 = sectionGenerator.RotateXYcoord(points2,45)
 # Perform a cross-section analysis with a max. mesh area of 5 mm^2 and poissons
 # ratio (nu) of 0.3.
 mesh2 = main.crossSectionAnalysis(points2, facets2, holes2, meshSize=5, nu=0.3)
